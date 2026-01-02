@@ -42,7 +42,6 @@
                         <DataGridTextColumn Binding="{Binding StepName}" Header="流程名称" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{Binding Pcs}" Header="Pcs"/>
                         <DataGridTextColumn Binding="{Binding ImageIndex}" Header="图片索引"/>
-                        <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Expander Grid.Row="1" Header="总PCS排序">

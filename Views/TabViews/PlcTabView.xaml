@@ -29,7 +29,6 @@
                     <DataGridTextColumn Binding="{Binding Name}" Header="名称" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding Address}" Header="地址"/>
                     <DataGridTextColumn Binding="{Binding Value}" Header="值"/>
-                    <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
@@ -46,12 +45,8 @@
                     <DataGridTextColumn Binding="{Binding Name}" Header="名称" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding Address}" Header="地址"/>
                     <DataGridTextColumn Binding="{Binding Value}" Header="值"/>
-                    <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
                 </DataGrid.Columns>
             </DataGrid>
-
-
-
         </GroupBox>
 
         <!-- 右侧PLC配置 -->
@@ -90,7 +85,7 @@
             <TextBox 
                 Grid.Row="2"
                 hc:InfoElement.Title="PLC_IP地址:"
-                Text="{Binding PlcConfig.Ip, Mode=TwoWay}"
+                Text="{Binding PlcConfig.Ip, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                 Style="{StaticResource TextBoxExtend}"
                 hc:InfoElement.Placeholder="请输入IP地址"
                 Margin="0,0,0,10"/>
@@ -99,7 +94,7 @@
             <TextBox 
                 Grid.Row="3"
                 hc:InfoElement.Title="PLC_端口号:"
-                Text="{Binding PlcConfig.Port, Mode=TwoWay}"
+                Text="{Binding PlcConfig.Port, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                 Style="{StaticResource TextBoxExtend}"
                 hc:InfoElement.Placeholder="请输入端口号"
                 Margin="0,0,0,10"/>

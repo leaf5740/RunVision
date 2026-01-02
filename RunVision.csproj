@@ -180,11 +180,11 @@
     <Compile Include="ViewModels\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SchemeConfigWindowViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\CameraTabViewModel .cs" />
-    <Compile Include="ViewModels\TabViewModels\DatabaseTabViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\PlcTabViewModel .cs" />
-    <Compile Include="ViewModels\TabViewModels\SaveImageTabViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\SolutionTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\CameraTabViewModel .cs" />
+    <Compile Include="ViewModels\TabViews\DatabaseTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\PlcTabViewModel .cs" />
+    <Compile Include="ViewModels\TabViews\SaveImageTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\SolutionTabViewModel.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -198,8 +198,8 @@
     <Compile Include="Views\SchemeConfigWindow.xaml.cs">
       <DependentUpon>SchemeConfigWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabViews\CameraTabView.xaml.cs">
-      <DependentUpon>CameraTabView.xaml</DependentUpon>
+    <Compile Include="Views\TabViews\CameraTab.xaml.cs">
+      <DependentUpon>CameraTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabViews\DatabaseTabView.xaml.cs">
       <DependentUpon>DatabaseTabView.xaml</DependentUpon>
@@ -225,7 +225,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TabViews\CameraTabView.xaml">
+    <Page Include="Views\TabViews\CameraTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

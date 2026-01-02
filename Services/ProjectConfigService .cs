@@ -17,7 +17,7 @@ namespace RunVision.Services
         private string _currentFilePath;
 
         // 当前配置内容
-        public ProjectModel CurrentSettings { get; private set; }
+        public ProjectModel ProjectModels { get; private set; }
 
         // 方案列表
         public List<string> ProjectNames { get; private set; } = new List<string>();
@@ -59,13 +59,13 @@ namespace RunVision.Services
 
             if (!File.Exists(_currentFilePath))
             {
-                CurrentSettings = CreateDefaultSettings();
-                Save();
+                ProjectModels = CreateDefaultSettings();
+                SaveConfig();
             }
             else
             {
                 var json = File.ReadAllText(_currentFilePath);
-                CurrentSettings = JsonConvert.DeserializeObject<ProjectModel>(json) ?? CreateDefaultSettings();
+                ProjectModels = JsonConvert.DeserializeObject<ProjectModel>(json) ?? CreateDefaultSettings();
             }
 
             VmSolution.Instance.CloseSolution();
@@ -84,13 +84,13 @@ namespace RunVision.Services
                 ProjectNames.Add(projectName);
         }
 
-        public void Save()
+        public void SaveConfig()
         {
             if (string.IsNullOrWhiteSpace(_currentFilePath))
             {
                 MyLogger.Error("当前没有加载方案，无法保存");
             }
-            var json = JsonConvert.SerializeObject(CurrentSettings, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(ProjectModels, Formatting.Indented);
             File.WriteAllText(_currentFilePath, json);
         }
 

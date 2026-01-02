@@ -28,7 +28,7 @@
                        IsTabFillEnabled="True">
 
             <hc:TabItem Header="相机配置">
-                <views:CameraTabView/>
+                <views:CameraTab/>
             </hc:TabItem>
 
             <hc:TabItem Header="PLC配置">

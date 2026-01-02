@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RunVision.ViewModels.TabViewModels
+namespace RunVision.ViewModels.TabViews
 {
-    public class CameraTabViewModel : BindableBase
+    public class SolutionTabViewModel:BindableBase
     {
-        public CameraTabViewModel()
+        public SolutionTabViewModel()
         {
         }
     }
