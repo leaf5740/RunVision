@@ -12,7 +12,7 @@ namespace RunVision.Services
         //加载项目
         void LoadProject(string projectName);
         //保存配置
-        void Save();
+        void SaveConfig();
     }
 
 }

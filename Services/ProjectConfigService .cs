@@ -60,7 +60,7 @@ namespace RunVision.Services
             if (!File.Exists(_currentFilePath))
             {
                 CurrentSettings = CreateDefaultSettings();
-                Save();
+                SaveConfig();
             }
             else
             {
@@ -84,7 +84,7 @@ namespace RunVision.Services
                 ProjectNames.Add(projectName);
         }
 
-        public void Save()
+        public void SaveConfig()
         {
             if (string.IsNullOrWhiteSpace(_currentFilePath))
             {

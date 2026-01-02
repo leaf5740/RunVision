@@ -26,8 +26,6 @@ namespace RunVision.Models
         public string Brand { get; set; } = string.Empty;
         //相机序列号
         public string Sn { get; set; } = string.Empty;
-        //相机备注信息
-        public string Remark { get; set; } = string.Empty;
         //相机完成信号plc
         public string PlcAddress { get; set; } =    string.Empty;
 

@@ -29,7 +29,7 @@
                     <DataGridTextColumn Binding="{Binding Name}" Header="名称" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding Address}" Header="地址"/>
                     <DataGridTextColumn Binding="{Binding Value}" Header="值"/>
-                    <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
+                    
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
@@ -46,7 +46,7 @@
                     <DataGridTextColumn Binding="{Binding Name}" Header="名称" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding Address}" Header="地址"/>
                     <DataGridTextColumn Binding="{Binding Value}" Header="值"/>
-                    <DataGridTextColumn Binding="{Binding Remark}" Header="备注"/>
+             
                 </DataGrid.Columns>
             </DataGrid>
 

@@ -4,6 +4,7 @@ using Prism.Ioc;
 using RunVision.Services;
 using RunVision.Utils;
 using RunVision.ViewModels;
+using RunVision.ViewModels.TabViewModels;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -49,14 +50,14 @@ namespace RunVision
         protected override Window CreateShell()
         {
             return Container.Resolve<Views.MainWindow>();
-
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppConfigService, ProjectConfigService>();
-            containerRegistry.Register<MainWindowViewModel>();
 
+            containerRegistry.Register<MainWindowViewModel>();
+            containerRegistry.Register<CameraTabViewModel>();
 
         }
 
