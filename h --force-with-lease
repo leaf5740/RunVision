@@ -1,0 +1,43 @@
+[33mcommit 7053293e4eafc999c25caa7014ec8a4beec1c2cc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Merge: d7f716f c983f4e
+Author: XXY_PC <xing_969969@qq.com>
+Date:   Fri Jan 2 15:23:37 2026 +0800
+
+    PLC与方案流程重构，界面与数据结构优化
+    
+    重构PLC配置为统一的读写地址集合，合并DataGrid显示，简化校验逻辑。方案流程移除冗余字段，流程类型与总PCS自动从全局变量模块获取，支持流程步骤的增删与校验，界面更简洁。新增GlobalVariableModuleCs依赖，日志支持控制台输出，图片压缩等级默认值调整。提升配置一致性与易用性。
+    重构相机配置Tab，移除备注字段并优化交互
+    
+    重命名并重构CameraTab相关文件，完善CameraTabViewModel逻辑，支持品牌与SN动态选择，添加/保存命令及输入校验。移除CameraModel及界面中的备注字段，统一命名与接口。同步更新csproj及相关引用，提升代码一致性与可维护性。
+    resolve merge conflicts, keep local version
+    
+    配置模型与ViewModel重构及校验增强
+    
+    重构DatabaseModel、ImageSaveModel等配置模型，继承BindableBase并实现属性变更通知，支持数据绑定。完善Camera/PLC配置校验逻辑，支持“无”或空字符串，优化用户提示。新增DatabaseTabViewModel和SaveImageTabViewModel，实现数据库与图片保存配置的MVVM结构。统一命名风格，移除冗余代码，提升健壮性和用户体验。
+
+[33mcommit d7f716f253bc9c7ed9412bf42550510a03d606f5[m
+Author: XXY_PC <xing_969969@qq.com>
+Date:   Tue Dec 23 14:49:21 2025 +0800
+
+    新增方案配置模块及权限管理优化
+    
+    本次提交新增完整的“方案配置”窗口及五个子页面（相机、PLC、数据库、Vm方案、存图配置），并优化主界面菜单和用户权限管理，支持游客/管理员身份切换。扩展和完善了数据模型与配置服务，增加加密狗事件处理，调整项目结构及依赖，统一UI风格，显著提升系统可用性和交互体验。
+    项目配置管理重构，支持多方案加载与切换
+    
+    新增项目配置模型与服务，统一管理方案配置。优化 MainWindowViewModel 依赖注入与方案切换逻辑，提升窗口关闭稳定性。界面增加分栏控件。引入 Newtonsoft.Json 依赖，相关文件纳入编译。为后续多方案与配置编辑功能奠定基础。
+    添加项目文件。
+
+[33mcommit c983f4ec04572a6b6bbccb5be23e2bd0570fb0a6[m
+Author: XXY_PC <xing_969969@qq.com>
+Date:   Tue Dec 23 14:49:21 2025 +0800
+
+    项目配置管理重构，支持多方案加载与切换
+    
+    新增项目配置模型与服务，统一管理方案配置。优化 MainWindowViewModel 依赖注入与方案切换逻辑，提升窗口关闭稳定性。界面增加分栏控件。引入 Newtonsoft.Json 依赖，相关文件纳入编译。为后续多方案与配置编辑功能奠定基础。
+    添加项目文件。
+
+[33mcommit 26e7ef3e1044f6a6f0eecb45c24415eb01a74218[m
+Author: XXY_PC <xing_969969@qq.com>
+Date:   Tue Dec 23 14:49:19 2025 +0800
+
+    添加 .gitattributes、.gitignore 和 README.md。

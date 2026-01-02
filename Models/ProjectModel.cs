@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,89 +22,193 @@ namespace RunVision.Models
         public ImageSaveModel ImageSaveConfig { get; set; } = new ImageSaveModel();
     }
 
+    // 相机模型类
     public class CameraModel
     {
         //相机品牌
         public string Brand { get; set; } = string.Empty;
         //相机序列号
         public string Sn { get; set; } = string.Empty;
-        //相机备注信息
-        public string Remark { get; set; } = string.Empty;
-        //相机完成信号plc
-        public string PlcAddress { get; set; } =    string.Empty;
+        //PLC相机完成地址
+        public string PlcAddress { get; set; } = string.Empty;
+        //PLC相机完成值
+        public string PlcValue { get; set; } = string.Empty;
 
     }
 
-    public class PlcModel
+    // PLC 模型类
+    public class PlcModel : BindableBase
     {
-        //PLC品牌
-        public string Brand { set; get; } = string.Empty;
-        //PLC通讯协议
-        public string Protocol { set; get; } = string.Empty;
-        //PLC ip 地址
-        public string Ip { set; get; } = string.Empty;
-        //PLC端口
-        public string Port { set; get; } = string.Empty;
-        //PLC 读地址列表
-        public List<PLCAddressModels> ReadPLCAddress { get; set; } = new List<PLCAddressModels>();
-        //PLC 写地址列表
-        public List<PLCAddressModels> WritePLCAddress { get; set; } = new List<PLCAddressModels>();
-
-        public class PLCAddressModels
+        private string _protocol = string.Empty;
+        public string Protocol
         {
-            //地址名称
-            public string Name { get; set; } = string.Empty;
-            //地址
-            public string Address { get; set; } = string.Empty;
-            //地址值
-            public string Value { get; set; } = string.Empty;
+            get => _protocol;
+            set => SetProperty(ref _protocol, value);
+        }
+
+        private string _brand = string.Empty;
+        public string Brand
+        {
+            get => _brand;
+            set => SetProperty(ref _brand, value);
+        }
+
+        private string _ip = string.Empty;
+        public string Ip
+        {
+            get => _ip;
+            set => SetProperty(ref _ip, value);
+        }
+
+        private string _port = string.Empty;
+        public string Port
+        {
+            get => _port;
+            set => SetProperty(ref _port, value);
+        }
+
+        // PLC 读写地址列表
+        public ObservableCollection<PLCAddressModel> PLCAddresses { get; set; } = new ObservableCollection<PLCAddressModel>();
+
+        public class PLCAddressModel : BindableBase
+        {
+            private string _name = string.Empty;
+            public string Name
+            {
+                get => _name;
+                set => SetProperty(ref _name, value);
+            }
+
+            private string _address = string.Empty;
+            public string Address
+            {
+                get => _address;
+                set => SetProperty(ref _address, value);
+            }
+
+            private string _readvalue = string.Empty;
+            public string ReadValue
+            {
+                get => _readvalue;
+                set => SetProperty(ref _readvalue, value);
+            }
+
+            private string _writeValue = string.Empty;
+            public string WriteValue
+            {
+                get => _writeValue;
+                set => SetProperty(ref _writeValue, value);
+            }
         }
     }
-    public class DatabaseModel
-    {
-        //数据库 ip 地址
-        public string Ip { set; get; } = string.Empty;
-        //数据库端口
-        public string Port { set; get; } = string.Empty;
-        //数据库密码
-        public string Password { set; get; } = string.Empty;
-        //数据库 库名
-        public string LibraryName { set; get; } = string.Empty;
-        //二维码表名
-        public string CodeTableName { set; get; } = string.Empty;
-        //数据表名
-        public string DataTableName { set; get; }  = string.Empty;
 
+    // 数据库模型类
+    public class DatabaseModel : BindableBase
+    {
+        // 数据库品牌
+        private string _databaseBrand = string.Empty;
+        public string DatabaseBrand
+        {
+            get => _databaseBrand;
+            set => SetProperty(ref _databaseBrand, value);
+        }
+
+        // 数据库类型
+        private string _ip;
+        public string Ip
+        {
+            get => _ip;
+            set => SetProperty(ref _ip, value);
+        }
+
+        // 数据库端口
+        private string _port;
+        public string Port
+        {
+            get => _port;
+            set => SetProperty(ref _port, value);
+        }
+
+        // 数据库用户名
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
+        }
+
+        // 数据库密码
+        private string _libraryName;
+        public string LibraryName
+        {
+            get => _libraryName;
+            set => SetProperty(ref _libraryName, value);
+        }
+
+        // code表名称
+        private string _codeTableName;
+        public string CodeTableName
+        {
+            get => _codeTableName;
+            set => SetProperty(ref _codeTableName, value);
+        }
+
+        //数据表名称
+        private string _dataTableName;
+        public string DataTableName
+        {
+            get => _dataTableName;
+            set => SetProperty(ref _dataTableName, value);
+        }
     }
 
+    // 方案模型类
     public class SolutionModel
     {
-        //方案名称
-        public string TotalPcs { get; set; } = string.Empty;
-        //方案图片数量
-        public string TotalImages { get; set; } = string.Empty;
-        // 方案排序方式
-        public string PcsSorting { get; set; } = string.Empty;
         // 流程步骤列表
         public List<FlowStepModel> FlowSteps { get; set; } = new List<FlowStepModel>();
 
-        public class FlowStepModel
+        public class FlowStepModel : BindableBase
         {
-            /// 流程名称
-            public string StepName { get; set; } = "未命名流程";
-            /// 该流程的PCS数量
-            public int Pcs { get; set; } = 0;
-            /// 该流程对应的图片索引
-            public string ImageIndex { get; set; } = "无";
+            private string _stepName;
+            public string StepName
+            {
+                get => _stepName;
+                set => SetProperty(ref _stepName, value);
+            }
+
+            private string _imageIndex;
+            public string ImageIndex
+            {
+                get => _imageIndex;
+                set => SetProperty(ref _imageIndex, value);
+            }
+
+            private string _retPcs;
+            public string RetPcs
+            {
+                get => _retPcs;
+                set => SetProperty(ref _retPcs, value);
+            }
         }
     }
 
-    public class ImageSaveModel
+    // 配置模型类
+    public class ImageSaveModel : BindableBase
     {
-        // 图像保存路径
-        public string ImageSavePath { get; set; } = string.Empty;
-        // 图像压缩等级
-        public int CompressionLevel { get; set; } = 80; 
+        private string _imageSavePath;
+        public string ImageSavePath
+        {
+            get => _imageSavePath;
+            set => SetProperty(ref _imageSavePath, value);
+        }
+
+        private string _compressionLevel = "0";
+        public string CompressionLevel
+        {
+            get => _compressionLevel;
+            set => SetProperty(ref _compressionLevel, value);
+        }
     }
 
 }

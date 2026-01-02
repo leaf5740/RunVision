@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\PC\Desktop\VM_DLL\FrontendUI.WPF.dll</HintPath>
     </Reference>
+    <Reference Include="GlobalVariableModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=df9beaf7c020f858, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\PC\Desktop\VM_DLL\GlobalVariableModuleCs.dll</HintPath>
+    </Reference>
     <Reference Include="HandyControl, Version=3.5.1.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
       <HintPath>packages\HandyControl.3.5.1\lib\net48\HandyControl.dll</HintPath>
     </Reference>
@@ -180,11 +184,12 @@
     <Compile Include="ViewModels\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SchemeConfigWindowViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\CameraTabViewModel .cs" />
-    <Compile Include="ViewModels\TabViewModels\DatabaseTabViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\PlcTabViewModel .cs" />
-    <Compile Include="ViewModels\TabViewModels\SaveImageTabViewModel.cs" />
-    <Compile Include="ViewModels\TabViewModels\SolutionTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\CameraTabViewModel .cs" />
+    <Compile Include="ViewModels\TabViews\DatabaseTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\PlcTabViewModel .cs" />
+    <Compile Include="ViewModels\TabViews\SaveImageTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\SolutionTabViewModel.cs" />
+    <Compile Include="ViewModels\TabViews\View\PcsConfigViewModel.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -198,8 +203,8 @@
     <Compile Include="Views\SchemeConfigWindow.xaml.cs">
       <DependentUpon>SchemeConfigWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabViews\CameraTabView.xaml.cs">
-      <DependentUpon>CameraTabView.xaml</DependentUpon>
+    <Compile Include="Views\TabViews\CameraTab.xaml.cs">
+      <DependentUpon>CameraTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabViews\DatabaseTabView.xaml.cs">
       <DependentUpon>DatabaseTabView.xaml</DependentUpon>
@@ -213,6 +218,9 @@
     <Compile Include="Views\TabViews\SolutionTabView.xaml.cs">
       <DependentUpon>SolutionTabView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TabViews\View\PcsConfig.xaml.cs">
+      <DependentUpon>PcsConfig.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,7 +233,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TabViews\CameraTabView.xaml">
+    <Page Include="Views\TabViews\CameraTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -242,6 +250,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TabViews\SolutionTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabViews\View\PcsConfig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

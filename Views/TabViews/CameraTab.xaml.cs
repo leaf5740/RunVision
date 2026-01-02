@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RunVision.Views.TabViews
 {
     /// <summary>
-    /// CameraTabView.xaml 的交互逻辑
+    /// CameraTab.xaml 的交互逻辑
     /// </summary>
-    public partial class CameraTabView : UserControl
+    public partial class CameraTab : UserControl
     {
-        public CameraTabView()
+        public CameraTab()
         {
             InitializeComponent();
         }

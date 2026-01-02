@@ -8,11 +8,11 @@ namespace RunVision.Services
         // 方案列表
         List<string> ProjectNames { get; }
         //配置内容
-        ProjectModel CurrentSettings { get; }
+        ProjectModel ProjectModels { get; }
         //加载项目
         void LoadProject(string projectName);
         //保存配置
-        void Save();
+        void SaveConfig();
     }
 
 }
